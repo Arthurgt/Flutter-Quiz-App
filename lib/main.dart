@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import './quiz.dart';
 import './result.dart';
-import './gradientContainer.dart';
+import 'startScreen.dart';
+
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
 
 void main() {
   runApp(MyApp());
@@ -64,10 +67,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: GradientContainer(Colors.green, Colors.teal),
-        // body: _questionIndex < questions.length
-        //     ? Quiz(_questionIndex, questions, answerQuestion)
-        //     : Result(_totalScore, _resetQuiz),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.green, Colors.teal],
+                begin: startAlignment,
+                end: endAlignment),
+          ),
+          child: StartScreen(),
+          // body: _questionIndex < questions.length
+          //     ? Quiz(_questionIndex, questions, answerQuestion)
+          //     : Result(_totalScore, _resetQuiz),
+        ),
       ),
     );
   }

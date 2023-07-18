@@ -1,25 +1,47 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
+import 'startScreen.dart';
+import 'questionsScreen.dart';
 
-class Quiz extends StatelessWidget {
-  final List<Map<String, Object>> questions;
-  final int questionIndex;
-  final Function answerQuestion;
+class Quiz extends StatefulWidget {
+  Quiz({key}) : super(key: key);
 
-  Quiz(@required this.questionIndex, @required this.questions,
-      @required this.answerQuestion);
+  @override
+  State<Quiz> createState() {
+    return _QuizState();
+  }
+}
+
+class _QuizState extends State<Quiz> {
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    activeScreen = StartScreen(switchScreen);
+    super.initState();
+  }
+
+  void switchScreen() {
+    setState(() {
+      activeScreen = QuestionsScreen();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Question(questions[questionIndex]['questionText']),
-        ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
-            .map((answer) {
-          return Answer(() => answerQuestion(answer['score']), answer['text']);
-        }).toList()
-      ],
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(255, 0, 40, 0),
+              Color.fromARGB(255, 0, 70, 0)
+            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          ),
+          child: Center(
+            child: activeScreen,
+          ),
+        ),
+      ),
     );
   }
 }

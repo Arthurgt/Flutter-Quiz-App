@@ -7,34 +7,34 @@ const questions = [
     'K2',
     'Makalu',
   ]),
-  QuizQuestion('hehe2', [
-    'hehe',
-    'hehe',
-    'hehe',
-    'hehe',
+  QuizQuestion('Which country has the largest population in the world?', [
+    'China',
+    'USA',
+    'Brazil',
+    'India',
   ]),
-  QuizQuestion('hehe3', [
-    'hehe',
-    'hehe',
-    'hehe',
-    'hehe',
+  QuizQuestion('What is the name of the longest river in Africa?', [
+    'Nile',
+    'Vistula',
+    'Amazon',
+    'Dunn\'s',
   ]),
-  QuizQuestion('hehe4', [
-    'hehe',
-    'hehe',
-    'hehe',
-    'hehe',
+  QuizQuestion('What American city is the Golden Gate Bridge located in?', [
+    'San Francisco',
+    'Miami',
+    'Chicago',
+    'New York',
   ]),
-  QuizQuestion('hehe5', [
-    'hehe',
-    'hehe',
-    'hehe',
-    'hehe',
+  QuizQuestion('What is the capital of Canada?', [
+    'Ottawa',
+    'Toronto',
+    'Calgary',
+    'Montreal',
   ]),
-  QuizQuestion('hehe6', [
-    'hehe',
-    'hehe',
-    'hehe',
-    'hehe',
+  QuizQuestion('What is the name of the smallest country in the world?', [
+    'Vatican',
+    'Andora',
+    'Lichtenstein',
+    'San Marino',
   ]),
 ];

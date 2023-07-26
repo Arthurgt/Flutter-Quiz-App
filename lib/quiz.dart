@@ -3,6 +3,8 @@ import 'startScreen.dart';
 import 'questionsScreen.dart';
 import 'resultsScreen.dart';
 import 'package:flutter_quiz_app/data/questions.dart';
+import 'resultsScreen.dart';
+import 'package:flutter_quiz_app/data/questions.dart';
 
 class Quiz extends StatefulWidget {
   Quiz({key}) : super(key: key);
@@ -14,6 +16,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  List<String> selectedAnswers = [];
   List<String> selectedAnswers = [];
   Widget? activeScreen;
 
